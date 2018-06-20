@@ -1,4 +1,4 @@
-NodeJS Dockerify CLI
+NodeJS Dockerify CLI - NodeJS 项目 Dockerify 命令行工具
 ========================
 
 ## 支持
@@ -21,50 +21,57 @@ export K8S_NAMESPACE=[namespace]
 ## CLI
 
 ```
-tdt -h
+ndc -h
 
-Usage: tdt <command>
+Usage: ndc <command>
 
 Options:
 
   -V, --version               output the version number
+                              输出当前版本号
   -a, --app <app>             the application name
+                              指定应用名称
   -h, --help                  output usage information
+                              获取帮助信息
 
 Commands:
 
   build|b                    Build an image from a Dockerfile
+                             编译镜像
   deploy|d                   Deploy a new stack or update an existing stack
+                             部署镜像
   clean|c                    Clean Dummy
+                             清理过期文件及镜像
   init|i                     Geneate the Dockerfile, .dockerignore, k8s.app.yml
+                             初始化默认文件
 ```
 
 ## 生成默认的 Dockerfile & .dockerignore & k8s.app.yml
 ```
-tdt init -m MAINTAINER -a APP_NAME -p NODE_PORT
+ndc init -m MAINTAINER -a APP_NAME -p NODE_PORT
 ```
 
 ## 生成镜像
 ```
-tdt build -a APP_NAME
+ndc build -a APP_NAME
 ```
 
 ## 发布到开发环境
 ```
-tdt deploy -a APP_NAME -e dev
+ndc deploy -a APP_NAME -e dev
 ```
 
 ## 发布到生产的 registry
 ```
-tdt deploy -a APP_NAME -e prod|production
+ndc deploy -a APP_NAME -e prod|production
 ```
 
 ## 清理
 ```
-tdt clean
+ndc clean
 ```
 
 若指定服务名称，则同时会清除相关的镜像及`none`的镜像
 ```
-tdt clean -a APP_NAME
+ndc clean -a APP_NAME
 ```

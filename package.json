@@ -1,12 +1,12 @@
 {
   "name": "node-dockerify-cli",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./bin/ndc",
   "repository": "git@github.com:leeqiang/node-dockerify-cli.git",
   "author": "lee <leesumiir@gmail.com>",
   "license": "MIT",
   "bin": {
-    "tdt": "./bin/tdt"
+    "ndc": "./bin/ndc"
   },
   "dependencies": {
     "commander": "^2.15.1",
