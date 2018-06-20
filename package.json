@@ -1,6 +1,6 @@
 {
   "name": "node-dockerify-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./bin/ndc",
   "repository": "git@github.com:leeqiang/node-dockerify-cli.git",
   "author": "lee <leesumiir@gmail.com>",
