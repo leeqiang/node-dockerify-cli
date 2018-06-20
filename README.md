@@ -38,8 +38,10 @@ Commands:
 
   build|b                    Build an image from a Dockerfile
                              编译镜像
+  publish|p                  Publish a new image to registry
+                             发布镜像
   deploy|d                   Deploy a new stack or update an existing stack
-                             部署镜像
+                             部署镜像(目前仅支持部署到本地的k8s)
   clean|c                    Clean Dummy
                              清理过期文件及镜像
   init|i                     Geneate the Dockerfile, .dockerignore, k8s.app.yml
@@ -56,14 +58,19 @@ ndc init -m MAINTAINER -a APP_NAME -p NODE_PORT
 ndc build -a APP_NAME
 ```
 
-## 发布到开发环境
+## 发布到开发 registry
 ```
-ndc deploy -a APP_NAME -e dev
+ndc publish -a APP_NAME -e dev
 ```
 
 ## 发布到生产的 registry
 ```
-ndc deploy -a APP_NAME -e prod|production
+ndc publish -a APP_NAME -e prod|production
+```
+
+## 部署到开发环境的 k8s
+```
+ndc deploy -a APP_NAME
 ```
 
 ## 清理
